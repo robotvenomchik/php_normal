@@ -13,7 +13,7 @@ abstract class My_class1 {
     }
 
     public function get_y() {
-        return $this->v;
+        return $this->y;
     }
 
     public function set_y($y1) {
@@ -40,7 +40,7 @@ abstract class My_class {
     }
 
     public function get_y() {
-        return $this->v;
+        return $this->y;
     }
 
     public function set_y($y1) {
@@ -108,7 +108,7 @@ abstract class My_class2 {
     }
 
     public function get_y() {
-        return $this->v;
+        return $this->y;
     }
 
     public function set_y($y1) {
