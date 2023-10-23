@@ -6,10 +6,7 @@ class Main
     public $var = 'значение по умолчанию';
 
     // объявление метода
-    public function displayVar() {
-
-    }
-    public function defaultRoute($var="something") {
+    public function handle($var="something") {
         echo "Welcome to the homepage!";
         echo $this->var=$var;
     }

@@ -4,7 +4,7 @@ namespace src\controllers;
 
 class Gallery
 {
-    function GalleryPage() {
+    function handle() {
         echo "You can contact us at contact@example.com";
     }
 

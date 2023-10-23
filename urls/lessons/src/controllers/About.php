@@ -4,7 +4,7 @@ namespace src\controllers;
 
 class About
 {
-    function aboutPage() {
+    function handle() {
         echo "This is the about page.";
     }
 }

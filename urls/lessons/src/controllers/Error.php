@@ -4,7 +4,7 @@ namespace src\controllers;
 
 class Error
 {
-    public function errorRoute() {
+    public function handle() {
         echo "error!";
     }
 }
