@@ -23,25 +23,14 @@ if (!class_exists($path)) {
 var_dump("21312");
 */
 
-// Define a function to handle the default route
 
-
-// Define a function to handle the about page
-
-
-// Define a function to handle the contact page
-
-// Get the current URL
-
-// Route the request
 $route = isset($_GET['route']) ? $_GET['route'] : '';
-// Спробуйте автоматично завантажити клас контролера
+
 $controllerClassName = "src\\controllers\\" . ucfirst($route);
 if (class_exists($controllerClassName)) {
     $controller = new $controllerClassName();
     $controller->handle();
 } else {
-    // Обробити помилку, якщо клас контролера не знайдено
     $controller = new Error();
     $controller->handle();
 }
