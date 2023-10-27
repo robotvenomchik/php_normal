@@ -1,4 +1,3 @@
-
 <div>Gallery</div>
 <table>
     <tr>
@@ -6,10 +5,14 @@
         <th>Second</th>
         <th>Third</th>
     </tr>
-    <tr>
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
-    </tr>
+    <?php foreach ($data as $row) : ?>
 
+
+        <tr>
+            <td><?= $row['first_name'] ?></td>
+            <td><?= $row['second_name'] ?></td>
+            <td><?= $row['login'] ?></td>
+            <td><?= $row['email'] ?></td>
+        </tr>
+    <?php endforeach; ?>
 </table>
