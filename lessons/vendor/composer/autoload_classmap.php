@@ -15,4 +15,6 @@ return array(
     'src\\core\\Viewer' => $baseDir . '/src/core/Viewer.php',
     'src\\models\\Gallery' => $baseDir . '/src/models/Gallery.php',
     'src\\models\\Users' => $baseDir . '/src/models/Users.php',
+    'src\\orm\\Connector' => $baseDir . '/src/orm/Connector.php',
+    'src\\orm\\Insert' => $baseDir . '/src/orm/Insert.php',
 );

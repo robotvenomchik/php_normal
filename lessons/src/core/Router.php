@@ -11,7 +11,8 @@ final class Router
         $URL = $_SERVER['REQUEST_URI'];
 
         if ($URL !== "/") {
-            $controller = $this->controllerPath . ucfirst(substr($URL, 1));
+            $url_parts=explode('/', substr($URL, 1));
+            $controller = $this->controllerPath . ucfirst($url_parts[0]);
         } else {
             $controller = $this->controllerPath . "Main";
         }
@@ -19,6 +20,12 @@ final class Router
             $controller = $this->controllerPath . "Error";
         }
         $obj = new $controller();
-        $obj->handle();
+        if(isset($url_parts[1]) && method_exists($obj, $url_parts[1])) {
+            $method_name=$url_parts[1];
+            $obj->$method_name();
+        } else{
+            $obj->handle();
+        }
+
     }
 }
