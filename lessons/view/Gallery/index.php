@@ -1,19 +1,24 @@
-<div>Main</div>
+<div>Gallery</div>
 <table>
-    <tr>
-        <th>First name</th>
-        <th>Second name</th>
-        <th>Login</th>
-        <th>Email</th>
-    </tr>
+    <th>id</th>
+    <th>name</th>
+    <th>author_id</th>
+    <th>length</th>
+    <th>year</th>
+    <th>rate</th>
+    <th>genre_id</th>
+    <th>alboum_id</th>
+    <th>update</th>
+    <th>delete</th>
     <?php foreach ($data as $row) : ?>
 
 
         <tr>
-            <td><?= $row['first_name'] ?></td>
-            <td><?= $row['second_name'] ?></td>
-            <td><?= $row['login'] ?></td>
-            <td><?= $row['email'] ?></td>
+          <?php foreach ($row as $sth) : ?>
+              <td> <?= $sth ?> </td>
+          <?php endforeach; ?>
+            <td><a href='/gallery/update?id=<?=$row['id'] ?>'>update</a></td>
+            <td><a href='/gallery/delete?id=<?=$row['id'] ?>'>delete</a></td>
         </tr>
     <?php endforeach; ?>
 </table>

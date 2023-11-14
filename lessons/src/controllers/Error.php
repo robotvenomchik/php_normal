@@ -7,6 +7,6 @@ use src\core\Viewer;
 class Error
 {
     public function handle() {
-        Viewer::view("Error");
+        Viewer::view("Delete");
     }
 }

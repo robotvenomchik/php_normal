@@ -8,9 +8,8 @@ final class Router
     private $controllerPath = "src\\controllers\\";
     public function run()
     {
-        $URL = $_SERVER['REQUEST_URI'];
-
-        if ($URL !== "/") {
+        $URL = $_SERVER['REDIRECT_URL'];
+        if ($URL !== NULL) {
             $url_parts=explode('/', substr($URL, 1));
             $controller = $this->controllerPath . ucfirst($url_parts[0]);
         } else {
