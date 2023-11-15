@@ -5,6 +5,7 @@ use \PDO;
 use src\orm\Connector;
 use src\orm\Delete;
 use src\orm\Insert;
+use src\orm\Select;
 use src\orm\Update;
 use src\orm\Where;
 
@@ -13,9 +14,14 @@ class Gallery
     private $tableName = 'Gallery';
     public function findAll():array
     {
-        $connect=new Connector();
-        $query=$connect->connect()->query('SELECT * FROM Gallery', PDO::FETCH_ASSOC);
-        return $query->fetchAll();
+        try {
+            $select= new Select($this->tableName);
+            return $select->exec($this->tableName);
+        }catch (\Exception $exception){
+            var_dump('Error in select in Gallery model');
+            var_dump($exception->getMessage());
+        }
+        return false;
     }
     public function findOne(int $id):array
     {
@@ -44,6 +50,16 @@ class Gallery
         }
         return false;
 
+    }
+    public function select(array $data, $condition):bool{
+        try {
+            $select= new Select();
+            return $select->exec($this->tableName);
+        }catch (\Exception $exception){
+            var_dump('Error in select in Gallery model');
+            var_dump($exception->getMessage());
+        }
+        return false;
     }
     public function delete($condition):bool{
         try {
