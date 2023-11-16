@@ -15,7 +15,7 @@ class Gallery
     public function findAll():array
     {
         try {
-            $select= new Select($this->tableName);
+            $select= new Select();
             return $select->exec($this->tableName);
         }catch (\Exception $exception){
             var_dump('Error in select in Gallery model');

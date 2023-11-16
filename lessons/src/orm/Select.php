@@ -12,23 +12,55 @@ class Select
     private $offset;
     private $connector;
 
-    /**
-     * @param string $fieldList
-     * @param $table_name
-     * @param $condition
-     * @param $order
-     * @param $limit
-     * @param $offset
-     */
-    public function __construct($table_name ,string $fieldList='*',  $condition = null, $order = null, $limit = null, $offset = null)
+
+    public function __construct()
+    {
+        $this->connector = new Connector();
+    }
+
+    public function setFieldList(string $fieldList='*'): void
     {
         $this->fieldList = $fieldList;
+    }
+
+    /**
+     * @param mixed $table_name
+     */
+    public function setTableName($table_name): void
+    {
         $this->table_name = $table_name;
+    }
+
+    /**
+     * @param mixed $condition
+     */
+    public function setCondition($condition): void
+    {
         $this->condition = $condition;
+    }
+
+    /**
+     * @param mixed $order
+     */
+    public function setOrder($order): void
+    {
         $this->order = $order;
+    }
+
+    /**
+     * @param mixed $limit
+     */
+    public function setLimit($limit): void
+    {
         $this->limit = $limit;
+    }
+
+    /**
+     * @param mixed $offset
+     */
+    public function setOffset($offset): void
+    {
         $this->offset = $offset;
-        $this->connector = new Connector();
     }
 
 
